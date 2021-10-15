@@ -1,0 +1,1 @@
+window.alert("Tere Maailm")

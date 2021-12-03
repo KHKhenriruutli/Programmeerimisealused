@@ -11,6 +11,7 @@ function weatherdatafetch(city) {
         })
         .then(function(data) {
             console.log(data);
+            drawweather(data);
         })
         .catch(function() {
 
@@ -19,5 +20,14 @@ function weatherdatafetch(city) {
 
 function cityweather(e) {
     weatherdatafetch("Barcelona");
+}
+
+function drawweather(data) {
+    let celsius = Math.round(parseFloat(data.main.temp) - 273.15);
+    let description = data.weather[0].description;
+
+    document.querySelector("#description").innerHTML = description;
+    document.querySelector("#temp").innerHTML = celsius;
+    document.querySelector("#location").innerHTML = data.name;
 }
 

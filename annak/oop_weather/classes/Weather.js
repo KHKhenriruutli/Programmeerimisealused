@@ -10,4 +10,8 @@ class Weather {
         return responseData;
 
     }
+
+    changecity(city) {
+        this.city = city;
+    }
 }

@@ -33,16 +33,27 @@ function drawweather(data) {
 }
 
 */
-
+const ui = new UI();
 const weather = new Weather("Tallinn");
 
+const form = document.querySelector("form");
+form.addEventListener("submit", changecityweather);
 
 function getweather() {
     weather.getWeather()
         .then(data => {
             console.log(data)
+            ui.drawweather(data);
         })
         .catch(error => console.log(error))
+}
+
+function changecityweather(event) {
+    const city = document.querySelector("#cityname").value;
+    weather.changecity(city);
+    getweather();
+    document.querySelector("#cityname").value = "";
+    event.preventDefault();
 }
 
 getweather();

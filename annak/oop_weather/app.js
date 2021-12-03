@@ -33,8 +33,12 @@ function drawweather(data) {
 }
 
 */
+const ls = new LS();
+const initcity = ls.getcitydata();
+const weather = new Weather(initcity);
 const ui = new UI();
-const weather = new Weather("Tallinn");
+
+
 
 const form = document.querySelector("form");
 form.addEventListener("submit", changecityweather);
@@ -51,6 +55,7 @@ function getweather() {
 function changecityweather(event) {
     const city = document.querySelector("#cityname").value;
     weather.changecity(city);
+    ls.setcitydata(city);
     getweather();
     document.querySelector("#cityname").value = "";
     event.preventDefault();

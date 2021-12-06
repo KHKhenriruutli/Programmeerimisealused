@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Tasks</title>
+</head>
+
+<body>
+<h1> Add Book</h1>
+<form>
+    <div class="form-group">
+        <p> Title</p>
+        <input id="entertitle" class="form-control">
+        <p> Author</p>
+        <input id="enterauthor" class="form-control">
+        <p> ISBN#</p>
+        <input id="enterisbn" placeholder="Subject" class="form-control">
+        <button id="submitbtn" type="submit"> SUBMIT</button>
+    </div>
+
+
+</form>
+<table>
+    <tr>
+        <th> Title</th>
+        <th> Author</th>
+        <th> ISBN</th>
+    </tr>
+    <div class="mycollection">
+
+    </div>
+
+
+
+</table>
+
+<button type="submit" id="deleteall" > DELETE ALL </button>
+
+
+
+
+
+<!-- Compiled and minified JavaScript -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="classes/Book.js"> </script>
+<script src="classes/UI.js"> </script>
+<script src="classes/LS.js"> </script>
+<script src="app.js"></script>
+</body>
+
+</html>

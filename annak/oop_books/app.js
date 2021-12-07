@@ -6,6 +6,7 @@ const isbninput = document.querySelector("#enterisbn");
 
 
 const ui = new UI();
+const ls = new LS();
 
 
 form.addEventListener("submit", addbook);
@@ -18,6 +19,7 @@ function addbook(event) {
     const book = new Book(title, author, isbn);
 
     ui.addbook(book);
+    ls.addtolocalstorage(book);
 
 
 

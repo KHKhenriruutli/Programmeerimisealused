@@ -22,10 +22,25 @@ class LS {
 
         this.setData("books", books);
 
+    }
+
+    delBook(book) {
+        let books;
+        if (localStorage.getItem("books") == null) {
+            books = [];
+        }
+        else {
+            books = JSON.parse(localStorage.getItem("books"));
+        }
+        books.forEach(function (value, index) {
+            if(value.join("") === book) {
+                books.splice(index, 1);
+            }
 
 
-
-
+        });
+        localStorage.setItem("books", JSON.stringify(books));
 
     }
+
 }

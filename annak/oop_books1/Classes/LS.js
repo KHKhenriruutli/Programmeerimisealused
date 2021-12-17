@@ -24,7 +24,7 @@ class LS {
 
     }
 
-    delBook(book) {
+    delBook(bookisbn) {
         let books;
         if (localStorage.getItem("books") == null) {
             books = [];
@@ -33,9 +33,11 @@ class LS {
             books = JSON.parse(localStorage.getItem("books"));
         }
         books.forEach(function (value, index) {
-            if(value.join("") === book) {
+            if(value[2] === bookisbn) {
                 books.splice(index, 1);
             }
+
+
 
 
         });

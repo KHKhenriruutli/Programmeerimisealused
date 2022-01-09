@@ -32,21 +32,23 @@ class UI {
 
 
     }
-
-
-
-    delBook(e) {
-        if(e.target.textContent === "X") {
-            if(confirm("DELETE?")) {
-                e.target.parentElement.parentElement.remove();
-                let bookisbn = e.target.parentElement.previousElementSibling.textContent;
-                console.log(bookisbn);
-                ls.delBook(bookisbn);
-
-            }
-
-        }
+    getbook(click) {
+        let isbn = click.parentElement.previousElementSibling.textContent;
+        let author = click.parentElement.previousElementSibling.previousElementSibling.textContent;
+        let title = click.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
+        return new Book(title, author, isbn)
 
     }
+
+    delbook(click) {
+        if(confirm("Do you want to delete?")) {
+            click.parentElement.parentElement.remove()
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
 
 }

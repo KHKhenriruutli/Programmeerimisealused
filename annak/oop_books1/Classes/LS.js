@@ -24,16 +24,10 @@ class LS {
 
     }
 
-    delBook(bookisbn) {
-        let books;
-        if (localStorage.getItem("books") == null) {
-            books = [];
-        }
-        else {
-            books = JSON.parse(localStorage.getItem("books"));
-        }
+    delBook(book) {
+        let books = this.getData("books")
         books.forEach(function (value, index) {
-            if(value[2] === bookisbn) {
+            if(value.title === book.title) {
                 books.splice(index, 1);
             }
 
@@ -41,7 +35,7 @@ class LS {
 
 
         });
-        localStorage.setItem("books", JSON.stringify(books));
+        this.setData("books", books)
 
     }
 

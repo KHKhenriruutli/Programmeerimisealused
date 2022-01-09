@@ -12,7 +12,7 @@ const booklist = document.querySelector("#book-list");
 
 form.addEventListener("submit", addbook);
 document.addEventListener("DOMContentLoaded", getBooksFromLocalStorage);
-booklist.addEventListener("click", ui.delBook);
+booklist.addEventListener("click", delbook);
 
 
 
@@ -41,7 +41,15 @@ function addbook(event) {
     event.preventDefault();
 }
 
+function delbook(event){
+    if(event.target.textContent === "X") {
+        const book = ui.getbook(event.target)
+        if(ui.delbook(event.target) === true ){
+            ls.delBook(book)
+        }
+    }
 
+}
 
 
 
